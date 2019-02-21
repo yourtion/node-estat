@@ -1,0 +1,40 @@
+{
+  "name": "estat",
+  "version": "0.0.1",
+  "description": "Easy statistics",
+  "keywords": [
+    "statistics",
+    "stat",
+    "Counter",
+    "Gauge",
+    "Histogram",
+    "Meter"
+  ],
+  "author": "YourtionGuo <yourtion@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typing": "dist/index.d.ts",
+  "files": [
+    "dist/index.d.ts",
+    "dist/index.js"
+  ],
+  "scripts": {
+    "pretest": "npm run lint && tsc",
+    "tag": "git tag v`node -p 'require(\"./package\").version'`",
+    "lint": "prettier --write src/**/*.ts",
+    "clean": "rm -rf dist",
+    "compile": "tsc",
+    "prepublishOnly": "npm run clean && npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourtion/node-estat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourtion/node-estat/issues"
+  },
+  "homepage": "https://github.com/yourtion/node-estat#readme",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  }
+}

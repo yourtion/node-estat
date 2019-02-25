@@ -1,6 +1,6 @@
 {
   "name": "estat",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Easy statistics",
   "keywords": [
     "statistics",
@@ -19,9 +19,9 @@
     "dist/index.js"
   ],
   "scripts": {
-    "pretest": "npm run lint && tsc",
+    "pretest": "npm run format && tsc",
     "tag": "git tag v`node -p 'require(\"./package\").version'`",
-    "lint": "prettier --write src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
     "clean": "rm -rf dist",
     "compile": "tsc",
     "prepublishOnly": "npm run clean && npm run compile"

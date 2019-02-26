@@ -100,6 +100,28 @@ export class Statistics {
     }
   }
 
+  /**
+   * 计时器方法
+   * @param tag
+   */
+  public timer(tag: string) {
+    const t = process.uptime();
+    const self = this;
+    return {
+      end(type?: string) {
+        const spent = Math.floor((process.uptime() - t) * 1000);
+        const name = type ? `${tag}_${type}` : tag;
+        self.add(name, spent);
+      },
+      ok() {
+        this.end("success");
+      },
+      err() {
+        this.end("error");
+      },
+    };
+  }
+
   public jsonReport() {
     const list: any[] = [];
     this.tags.forEach((item, tag) => {
